@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   initHeader();
   initMobileNav();
+  initSearch();
   initScrollAnimations();
   initFAQ();
   initTestimonialSlider();
@@ -544,3 +545,235 @@ document.querySelectorAll('.newsletter-form').forEach(form => {
     }
   });
 });
+// ============================================
+// SEARCH FUNCTIONALITY
+// ============================================
+
+function initSearch() {
+  const searchBtn = document.querySelector('.search-btn');
+  if (!searchBtn) return;
+
+  // Create search overlay
+  const searchOverlay = document.createElement('div');
+  searchOverlay.id = 'search-overlay';
+  searchOverlay.innerHTML = `
+    <div id="search-box">
+      <div id="search-input-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Search services, blog, pages...">
+        <button id="search-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div id="search-results"></div>
+    </div>
+  `;
+  document.body.appendChild(searchOverlay);
+
+  // Search overlay styles
+  const searchStyle = document.createElement('style');
+  searchStyle.textContent = `
+    #search-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(45, 27, 78, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 99999;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 100px;
+    }
+    #search-overlay.active {
+      display: flex;
+    }
+    #search-box {
+      width: 100%;
+      max-width: 700px;
+      padding: 0 20px;
+    }
+    #search-input-wrapper {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 50px;
+      padding: 15px 25px;
+      gap: 15px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    #search-input-wrapper i {
+      color: #9b7ed9;
+      font-size: 1.2rem;
+    }
+    #search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1.1rem;
+      font-family: Poppins, sans-serif;
+      color: #2d1b4e;
+      background: transparent;
+    }
+    #search-close {
+      background: #f0e8ff;
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+      color: #7c5fc0;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #search-results {
+      margin-top: 15px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+    .search-result-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px 25px;
+      border-bottom: 1px solid #f0e8ff;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      color: #2d1b4e;
+    }
+    .search-result-item:hover {
+      background: #f5eeff;
+    }
+    .search-result-icon {
+      width: 45px;
+      height: 45px;
+      background: linear-gradient(135deg, #9b7ed9, #c4aef5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .search-result-text h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .search-result-text p {
+      font-size: 0.82rem;
+      color: #8b7aa8;
+    }
+    .search-no-result {
+      padding: 40px;
+      text-align: center;
+      color: #8b7aa8;
+    }
+    .search-no-result i {
+      font-size: 2.5rem;
+      color: #c4aef5;
+      margin-bottom: 10px;
+    }
+  `;
+  document.head.appendChild(searchStyle);
+
+  // Search data
+  const searchData = [
+    { title: 'Home', desc: 'Welcome to V Shine Makeup Studio', url: 'index.html', icon: 'fa-home' },
+    { title: 'About Us', desc: 'Meet Vishakha Bangare and our team', url: 'about.html', icon: 'fa-user' },
+    { title: 'Services', desc: 'All beauty services we offer', url: 'services.html', icon: 'fa-list' },
+    { title: 'Bridal Makeup', desc: 'Luxury bridal makeup packages starting ₹15,000', url: 'bridal-makeup.html', icon: 'fa-crown' },
+    { title: 'Party Makeup', desc: 'Glamorous party looks starting ₹2,500', url: 'party-makeup.html', icon: 'fa-glass-cheers' },
+    { title: 'Hair Styling', desc: 'Professional hair styling and treatments', url: 'hair-styling.html', icon: 'fa-cut' },
+    { title: 'Nail Art', desc: 'Nail art and extensions starting ₹500', url: 'nail-art.html', icon: 'fa-hand-sparkles' },
+    { title: 'Skin Care', desc: 'Luxury facials and skincare treatments', url: 'skin-care.html', icon: 'fa-spa' },
+    { title: 'Beauty Academy', desc: 'Professional makeup courses starting ₹15,000', url: 'beauty-academy.html', icon: 'fa-graduation-cap' },
+    { title: 'Gallery', desc: 'View our portfolio and work', url: 'gallery.html', icon: 'fa-images' },
+    { title: 'Blog', desc: 'Beauty tips and trends', url: 'blog.html', icon: 'fa-pen' },
+    { title: 'Contact Us', desc: 'Book appointment or get in touch', url: 'contact.html', icon: 'fa-phone' },
+    { title: 'Testimonials', desc: 'What our clients say about us', url: 'testimonials.html', icon: 'fa-star' },
+    { title: 'Privacy Policy', desc: 'Our privacy policy', url: 'privacy-policy.html', icon: 'fa-shield-alt' },
+    { title: 'Terms & Conditions', desc: 'Terms and conditions', url: 'terms-conditions.html', icon: 'fa-file-alt' },
+    { title: 'Book Appointment', desc: 'Book your beauty appointment today', url: 'contact.html', icon: 'fa-calendar-check' },
+    { title: 'Bridal Package - Silver ₹15,000', desc: 'HD Makeup, Basic Hairstyle, Touch-up Kit', url: 'bridal-makeup.html', icon: 'fa-gem' },
+    { title: 'Bridal Package - Gold ₹25,000', desc: 'Airbrush Makeup, Premium Hairstyle, Draping', url: 'bridal-makeup.html', icon: 'fa-gem' },
+    { title: 'Bridal Package - Diamond ₹45,000', desc: 'Complete bridal package with trial sessions', url: 'bridal-makeup.html', icon: 'fa-gem' },
+    { title: 'Basic Makeup Course ₹15,000', desc: '1 Month professional makeup course', url: 'beauty-academy.html', icon: 'fa-palette' },
+    { title: 'Advanced Makeup Course ₹35,000', desc: '3 Month advanced makeup artistry course', url: 'beauty-academy.html', icon: 'fa-magic' },
+    { title: 'Complete Beauty Pro ₹55,000', desc: '6 Month complete beauty professional course', url: 'beauty-academy.html', icon: 'fa-certificate' },
+    { title: 'Gold Facial ₹2,500', desc: 'Luxurious gold-infused facial treatment', url: 'skin-care.html', icon: 'fa-spa' },
+    { title: 'Diamond Facial ₹3,500', desc: 'Premium microdermabrasion facial', url: 'skin-care.html', icon: 'fa-spa' },
+    { title: 'Keratin Smoothing ₹5,000', desc: 'Professional keratin hair treatment', url: 'hair-styling.html', icon: 'fa-cut' },
+    { title: 'Gel Extensions ₹2,500', desc: 'Full set gel nail extensions', url: 'nail-art.html', icon: 'fa-hand-sparkles' },
+    { title: 'WhatsApp Us', desc: 'Chat with us on WhatsApp', url: 'https://wa.me/919987936131', icon: 'fa-whatsapp' },
+    { title: 'Call Us - 9987936131', desc: 'Call for appointments and enquiries', url: 'tel:9987936131', icon: 'fa-phone' },
+  ];
+
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  const closeBtn = document.getElementById('search-close');
+
+  // Open search
+  searchBtn.addEventListener('click', function() {
+    searchOverlay.classList.add('active');
+    setTimeout(() => input.focus(), 100);
+  });
+
+  // Close search
+  closeBtn.addEventListener('click', closeSearch);
+  searchOverlay.addEventListener('click', function(e) {
+    if (e.target === searchOverlay) closeSearch();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeSearch();
+  });
+
+  function closeSearch() {
+    searchOverlay.classList.remove('active');
+    input.value = '';
+    results.innerHTML = '';
+  }
+
+  // Search logic
+  input.addEventListener('input', function() {
+    const query = this.value.trim().toLowerCase();
+
+    if (query.length < 2) {
+      results.innerHTML = '';
+      return;
+    }
+
+    const filtered = searchData.filter(item =>
+      item.title.toLowerCase().includes(query) ||
+      item.desc.toLowerCase().includes(query)
+    );
+
+    if (filtered.length === 0) {
+      results.innerHTML = `
+        <div class="search-no-result">
+          <i class="fas fa-search"></i>
+          <p>No results found for "<strong>${query}</strong>"</p>
+        </div>
+      `;
+      return;
+    }
+
+    results.innerHTML = filtered.map(item => `
+      <a href="${item.url}" class="search-result-item">
+        <div class="search-result-icon">
+          <i class="fas ${item.icon}"></i>
+        </div>
+        <div class="search-result-text">
+          <h4>${item.title}</h4>
+          <p>${item.desc}</p>
+        </div>
+      </a>
+    `).join('');
+  });
+}
