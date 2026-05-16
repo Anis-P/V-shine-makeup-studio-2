@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Products - V Shine Makeup Studio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header scrolled"><div class="container"><a href="index.html" class="logo"><div class="logo-icon">V</div><span>V Shine</span></a><nav class="nav-menu"><a href="index.html" class="nav-link">Home</a><div class="nav-dropdown"><a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i></a><div class="dropdown-menu"><a href="bridal-makeup.html">Bridal Makeup</a><a href="party-makeup.html">Party Makeup</a><a href="hair-styling.html">Hair Styling</a><a href="nail-art.html">Nail Art</a><a href="skin-care.html">Skin Care</a></div></div><a href="beauty-academy.html" class="nav-link">Academy</a><a href="shop.html" class="nav-link active">Shop</a><a href="gallery.html" class="nav-link">Gallery</a><a href="contact.html" class="nav-link">Contact</a></nav><div class="header-actions"><button class="search-btn"><i class="fas fa-search"></i></button><a href="cart.html" class="cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count" style="display:none;">0</span></a><div class="mobile-toggle"><span></span><span></span><span></span></div></div></div></header>
+  <div class="mobile-nav"><button class="mobile-nav-close"><i class="fas fa-times"></i></button><div class="mobile-nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="cart.html">Cart</a><a href="contact.html">Contact</a></div></div>
+
+  <section class="page-header" style="background: linear-gradient(135deg, #f8bbd0 0%, #e8d5f7 50%, #c4aef5 100%);">
+    <div class="container">
+      <h1>Shop Beauty Products</h1>
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Shop</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Shop Header -->
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;margin-bottom:40px;" class="reveal">
+        <div><h2 style="margin-bottom:5px;">Our Product Collection</h2><p style="font-size:0.95rem;">Curated by our expert artists for flawless results at home</p></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <select style="padding:10px 20px;border:2px solid var(--border-light);border-radius:50px;background:white;font-family:Poppins;cursor:pointer;">
+            <option>All Categories</option>
+            <option>Makeup</option>
+            <option>Skincare</option>
+            <option>Hair Care</option>
+            <option>Tools & Accessories</option>
+          </select>
+          <select style="padding:10px 20px;border:2px solid var(--border-light);border-radius:50px;background:white;font-family:Poppins;cursor:pointer;">
+            <option>Sort By: Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest First</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Category Tags -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;" class="reveal">
+        <span style="padding:8px 20px;background:var(--primary);color:white;border-radius:50px;cursor:pointer;font-size:0.9rem;">All Products</span>
+        <span style="padding:8px 20px;background:white;border:2px solid var(--border-light);border-radius:50px;cursor:pointer;font-size:0.9rem;transition:var(--transition);" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-light)'">Makeup</span>
+        <span style="padding:8px 20px;background:white;border:2px solid var(--border-light);border-radius:50px;cursor:pointer;font-size:0.9rem;transition:var(--transition);" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-light)'">Skincare</span>
+        <span style="padding:8px 20px;background:white;border:2px solid var(--border-light);border-radius:50px;cursor:pointer;font-size:0.9rem;transition:var(--transition);" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-light)'">Hair Care</span>
+        <span style="padding:8px 20px;background:white;border:2px solid var(--border-light);border-radius:50px;cursor:pointer;font-size:0.9rem;transition:var(--transition);" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border-light)'">Tools</span>
+      </div>
+      
+      <!-- Products Grid -->
+      <div class="products-grid reveal">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/images/product-1.jpg" alt="Luxury Hydrating Foundation">
+            <button class="product-wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-overlay">
+              <button class="add-to-cart-btn" onclick="addToCart({id:'prod1',name:'Luxury Hydrating Foundation',price:2499,image:'assets/images/product-1.jpg',category:'Makeup'})"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Foundation</div>
+            <h3 class="product-name"><a href="product-details.html?id=prod1" style="color:inherit;">Luxury Hydrating Foundation</a></h3>
+            <div class="product-price"><span class="current-price">₹2,499</span><span class="original-price">₹3,299</span></div>
+            <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>(128)</span></div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/images/product-2.jpg" alt="Velvet Matte Lipstick">
+            <span class="featured-card-badge" style="top:15px;left:15px;">Bestseller</span>
+            <button class="product-wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-overlay">
+              <button class="add-to-cart-btn" onclick="addToCart({id:'prod2',name:'Velvet Matte Lipstick - Ruby Red',price:899,image:'assets/images/product-2.jpg',category:'Lips'})"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Lipstick</div>
+            <h3 class="product-name"><a href="product-details.html?id=prod2" style="color:inherit;">Velvet Matte Lipstick - Ruby Red</a></h3>
+            <div class="product-price"><span class="current-price">₹899</span><span class="original-price">₹1,199</span></div>
+            <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>(256)</span></div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/images/product-3.jpg" alt="Vitamin C Serum">
+            <button class="product-wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-overlay">
+              <button class="add-to-cart-btn" onclick="addToCart({id:'prod3',name:'Brightening Vitamin C Serum',price:1499,image:'assets/images/product-3.jpg',category:'Skincare'})"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Serum</div>
+            <h3 class="product-name"><a href="product-details.html?id=prod3" style="color:inherit;">Brightening Vitamin C Serum</a></h3>
+            <div class="product-price"><span class="current-price">₹1,499</span><span class="original-price">₹2,199</span></div>
+            <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>(189)</span></div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/images/product-4.jpg" alt="Eyeshadow Palette">
+            <button class="product-wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-overlay">
+              <button class="add-to-cart-btn" onclick="addToCart({id:'prod4',name:'Sunset Dreams Eyeshadow Palette',price:1799,image:'assets/images/product-4.jpg',category:'Eyes'})"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Eyeshadow</div>
+            <h3 class="product-name"><a href="product-details.html?id=prod4" style="color:inherit;">Sunset Dreams Eyeshadow Palette</a></h3>
+            <div class="product-price"><span class="current-price">₹1,799</span><span class="original-price">₹2,499</span></div>
+            <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>(94)</span></div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/images/product-5.jpg" alt="Volume Mascara">
+            <button class="product-wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-overlay">
+              <button class="add-to-cart-btn" onclick="addToCart({id:'prod5',name:'Drama Queen Volume Mascara',price:799,image:'assets/images/product-5.jpg',category:'Eyes'})"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Mascara</div>
+            <h3 class="product-name"><a href="product-details.html?id=prod5" style="color:inherit;">Drama Queen Volume Mascara</a></h3>
+            <div class="product-price"><span class="current-price">₹799</span><span class="original-price">₹999</span></div>
+            <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>(167)</span></div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/images/product-6.jpg" alt="Hydrating Face Cream">
+            <span class="featured-card-badge" style="top:15px;left:15px;background:linear-gradient(135deg,#25D366,#128C7E);">New</span>
+            <button class="product-wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-overlay">
+              <button class="add-to-cart-btn" onclick="addToCart({id:'prod6',name:'24H Hydrating Face Cream',price:1299,image:'assets/images/product-6.jpg',category:'Skincare'})"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Moisturizer</div>
+            <h3 class="product-name"><a href="product-details.html?id=prod6" style="color:inherit;">24H Hydrating Face Cream</a></h3>
+            <div class="product-price"><span class="current-price">₹1,299</span><span class="original-price">₹1,799</span></div>
+            <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>(78)</span></div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/images/products-hero.jpg" alt="Complete Makeup Kit">
+            <span class="featured-card-badge" style="top:15px;left:15px;">Limited</span>
+            <button class="product-wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-overlay">
+              <button class="add-to-cart-btn" onclick="addToCart({id:'prod7',name:'Bridal Complete Makeup Kit',price:9999,image:'assets/images/products-hero.jpg',category:'Kits'})"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Kit</div>
+            <h3 class="product-name"><a href="product-details.html?id=prod7" style="color:inherit;">Bridal Complete Makeup Kit</a></h3>
+            <div class="product-price"><span class="current-price">₹9,999</span><span class="original-price">₹14,999</span></div>
+            <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>(45)</span></div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/images/skincare-hero.jpg" alt="Gold Facial Mask">
+            <button class="product-wishlist"><i class="far fa-heart"></i></button>
+            <div class="product-overlay">
+              <button class="add-to-cart-btn" onclick="addToCart({id:'prod8',name:'24K Gold Radiance Mask',price:1999,image:'assets/images/skincare-hero.jpg',category:'Skincare'})"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-category">Face Mask</div>
+            <h3 class="product-name"><a href="product-details.html?id=prod8" style="color:inherit;">24K Gold Radiance Mask</a></h3>
+            <div class="product-price"><span class="current-price">₹1,999</span><span class="original-price">₹2,799</span></div>
+            <div class="product-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>(112)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">V</div><span>V Shine</span></a><p>Premium beauty products curated by experts.</p><div class="social-links"><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></div></div><div class="footer-column"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="shop.html">Shop</a></li></ul></div><div class="footer-column"><h4>Categories</h4><ul><li><a href="#">Makeup</a></li><li><a href="#">Skincare</a></li><li><a href="#">Hair Care</a></li></ul></div><div class="footer-column"><h4>Contact</h4><ul><li><a href="tel:9987936131">9987936131</a></li><li><a href="https://wa.me/919987936131">WhatsApp</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2024 V Shine Makeup Studio.</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy</a><a href="terms-conditions.html">Terms</a></div></div></div></footer>
+  <a href="https://wa.me/919987936131" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+  <script src="js/main.js"></script>
+</body>
+</html>

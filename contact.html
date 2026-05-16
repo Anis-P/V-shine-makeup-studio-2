@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - V Shine Makeup Studio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header scrolled"><div class="container"><a href="index.html" class="logo"><div class="logo-icon">V</div><span>V Shine</span></a><nav class="nav-menu"><a href="index.html" class="nav-link">Home</a><div class="nav-dropdown"><a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i></a><div class="dropdown-menu"><a href="bridal-makeup.html">Bridal Makeup</a><a href="party-makeup.html">Party Makeup</a><a href="hair-styling.html">Hair Styling</a><a href="nail-art.html">Nail Art</a><a href="skin-care.html">Skin Care</a></div></div><a href="beauty-academy.html" class="nav-link">Academy</a><a href="shop.html" class="nav-link">Shop</a><a href="gallery.html" class="nav-link">Gallery</a><a href="blog.html" class="nav-link">Blog</a><a href="contact.html" class="nav-link active">Contact</a></nav><div class="header-actions"><button class="search-btn"><i class="fas fa-search"></i></button><a href="cart.html" class="cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count" style="display:none;">0</span></a><div class="mobile-toggle"><span></span><span></span><span></span></div></div></div></header>
+  <div class="mobile-nav"><button class="mobile-nav-close"><i class="fas fa-times"></i></button><div class="mobile-nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact Us</a></div></div>
+
+  <section class="page-header" style="background: linear-gradient(135deg, #c4aef5 0%, #e8d5f7 50%, #f5eeff 100%);">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Contact Us</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <!-- Contact Info Cards -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 60px;" class="reveal">
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="info-text">
+            <h4>Call Us</h4>
+            <p><a href="tel:9987936131" style="color: var(--primary-dark); font-weight: 600;">9987936131</a></p>
+            <p style="font-size: 0.85rem;">Mon-Sat: 10AM - 8PM</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon" style="background: linear-gradient(135deg, #25D366, #128C7E);"><i class="fab fa-whatsapp"></i></div>
+          <div class="info-text">
+            <h4>WhatsApp</h4>
+            <p><a href="https://wa.me/919987936131?text=Hi%20V%20Shine!%20I%27m%20interested%20in%20your%20beauty%20services." target="_blank" style="color: #25D366; font-weight: 600;">Chat Now</a></p>
+            <p style="font-size: 0.85rem;">Quick responses guaranteed!</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div class="info-text">
+            <h4>Email Us</h4>
+            <p><a href="mailto:info@vshine.in" style="color: var(--primary-dark); font-weight: 600;">info@vshine.in</a></p>
+            <p style="font-size: 0.85rem;">We reply within 24 hours</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="info-text">
+            <h4>Visit Us</h4>
+            <p style="font-weight: 500;">Mumbai, Maharashtra</p>
+            <p style="font-size: 0.85rem;">India</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Grid -->
+      <div class="contact-grid reveal">
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h3 style="margin-bottom: 25px; font-size: 1.5rem;">Send Us a Message</h3>
+          <form class="inquiry-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" class="form-control" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" class="form-control" placeholder="Enter your phone number" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" class="form-control" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+              <label>Service Interested In</label>
+              <select class="form-control">
+                <option value="">Select a service...</option>
+                <option>Bridal Makeup</option>
+                <option>Party Makeup</option>
+                <option>Hair Styling</option>
+                <option>Skin Care / Facial</option>
+                <option>Nail Art / Extensions</option>
+                <option>Beauty Academy Course</option>
+                <option>Product Purchase</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Your Message *</label>
+              <textarea class="form-control" placeholder="Tell us about your requirements..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+
+        <!-- Info & Quick Book -->
+        <div class="contact-info-cards">
+          <div class="info-card" style="background: linear-gradient(135deg, #f5eeff, #e8d5f7);">
+            <div class="info-icon"><i class="fas fa-calendar-check"></i></div>
+            <div class="info-text">
+              <h4>Quick Appointment Booking</h4>
+              <p>Prefer to book directly? Call or WhatsApp us for instant appointment confirmation.</p>
+              <div style="margin-top: 15px;">
+                <a href="tel:9987936131" class="btn btn-sm btn-primary" style="margin-right: 10px;"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="https://wa.me/919987936131?text=Hi%20V%20Shine!%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" class="btn btn-sm btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div class="info-text">
+              <h4>Business Hours</h4>
+              <p><strong>Monday - Saturday:</strong> 10:00 AM - 8:00 PM</p>
+              <p><strong>Sunday:</strong> By Appointment Only</p>
+              <p style="font-size: 0.85rem; color: var(--primary); margin-top: 8px;"><i class="fas fa-info-circle"></i> Bridal bookings available on all days</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-share-alt"></i></div>
+            <div class="info-text">
+              <h4>Follow Us on Social Media</h4>
+              <div class="social-links" style="margin-top: 10px;">
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Map -->
+      <div class="map-container reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11645625636!2d72.74109995!3d19.08219855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c630664cced1%3A0x5da53edf3408e28c!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1703000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon">V</div><span>V Shine</span></a><p>We'd love to hear from you!</p><div class="social-links"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-column"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li></ul></div><div class="footer-column"><h4>Services</h4><ul><li><a href="bridal-makeup.html">Bridal Makeup</a></li><li><a href="party-makeup.html">Party Makeup</a></li><li><a href="beauty-academy.html">Academy</a></li><li><a href="shop.html">Shop</a></li></ul></div><div class="footer-column"><h4>Contact</h4><ul><li><i class="fas fa-phone" style="color:var(--primary-light);margin-right:8px;"></i><a href="tel:9987936131">9987936131</a></li><li><i class="fab fa-whatsapp" style="color:#25D366;margin-right:8px;"></i><a href="https://wa.me/919987936131">WhatsApp</a></li><li><i class="fas fa-envelope" style="color:var(--primary-light);margin-right:8px;"></i> info@vshine.in</li></ul></div></div><div class="footer-bottom"><p>&copy; 2024 V Shine Makeup Studio by Vishakha Bangare.</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms & Conditions</a></div></div></div></footer>
+  <a href="https://wa.me/919987936131" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+  <script src="js/main.js"></script>
+</body>
+</html>
