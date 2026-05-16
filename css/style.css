@@ -2332,3 +2332,72 @@ textarea.form-control {
     color: black;
   }
 }
+/* ============================================
+   MOBILE ALIGNMENT FIXES
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* Fix text alignment on mobile */
+  .section .container > div {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  /* Fix all text sections */
+  h1, h2, h3, h4, p {
+    text-align: left;
+    padding: 0;
+  }
+
+  /* Fix feature items alignment */
+  .feature-item {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;
+  }
+
+  /* Fix section padding on mobile */
+  .section {
+    padding: 50px 0;
+  }
+
+  .section .container {
+    padding: 0 20px;
+  }
+
+  /* Fix about section grid */
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+
+  /* Fix card white boxes */
+  .feature-item,
+  .info-card,
+  .service-card {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Fix hero section */
+  .hero .container {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  /* Fix floating cards hiding off screen */
+  .hero-floating-card.card-1 {
+    right: 10px !important;
+    top: 15px !important;
+  }
+
+  .hero-floating-card.card-2 {
+    left: 10px !important;
+    bottom: 15px !important;
+  }
+}
